@@ -1,11 +1,16 @@
+/**
+ * Provides a menu to play the game or see instructions of game.
+ * Main class which sets up the game and lets the user interact
+ * with the game and play it.
+ *
+ * @author Griffin Jarvis
+ */
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.HashMap;
 public class GameGui {
-
-    //Game GameClass = new Game();
 
     private static final int FORTRESSSTRENGTH = 1500;
     private static final int GRIDSIZE = 10;
@@ -22,8 +27,6 @@ public class GameGui {
         System.out.println("Please select an option from the menu: ");
         System.out.println("Press 'S' to start game.");
         System.out.println("Press 'I' for Instructions" );
-
-
 
         HashMap<Integer, Integer> damageWithCells = new HashMap<>();
         damageWithCells.put(1, 1);
@@ -87,6 +90,7 @@ public class GameGui {
            }
 
         }
+        
         //creates grid of FOG
         for (int i = 0; i< GRIDSIZE; i++){
             for (int j = 0; j< GRIDSIZE; j++){
@@ -94,7 +98,7 @@ public class GameGui {
             }
         }
 
-        //COLUMN AND ROW HEADERS
+        //Column and row headers
         String [] alpha = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
         String numbers = "  0 1 2 3 4 5 6 7 8 9";
 
@@ -118,8 +122,6 @@ public class GameGui {
                             }
                             System.out.println();
                         }
-
-
 
                         boolean validInput = true;
 
@@ -153,12 +155,12 @@ public class GameGui {
                             System.out.println("You missed your shot");
 
                         }
-                        //computer
+
+                        //enemy's turn to fire their tanks
                         FortressGame.makeEnemyMove();
                         System.out.println("Your Fortress remaining health is " + FortressGame.getFortressStrength());
-
-
                     }
+
                    if (FortressGame.isPlayerWin()){
                        System.out.println("YOU WIN");
                    } else {

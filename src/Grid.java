@@ -1,4 +1,9 @@
-import java.util.ArrayList;
+/**
+ * A 2d grid of string elements for our Fortress Game
+ *
+ * @author Griffin Jarvis
+ */
+ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
